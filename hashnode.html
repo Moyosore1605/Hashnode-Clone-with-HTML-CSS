@@ -1,0 +1,919 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/css/hashnode.css">
+    <title>Hashnode</title>
+    <style>
+        body {
+            padding: 0px;
+            margin: 0px;
+            display: flex;
+            font-family: 'Inter', 'Segoe UI', Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji';
+            line-height: 1.5;
+            letter-spacing: -1px;
+        }
+
+        button {
+            border: none;
+            border-radius: 5px;
+            background-color: white;
+        }
+
+        .d1 {
+            display: flex;
+            flex-direction: column;
+            width: 13%;
+            background-color: rgba(59, 130, 246, 0.05);
+            padding: 20px 0px 5px 40px;
+            border-right: 1px solid lightgrey;
+            position: sticky;
+            top: 0px;
+            height: 100vh;
+        }
+
+        .d1 button {
+            background-color: blue;
+            color: white;
+        }
+
+        .d1 a {
+            color: black;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+
+        .d2 {
+            flex-grow: 6;
+            text-align: center;
+        }
+
+        .d3 {
+            padding: 40px 0px 40px 0px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 100px;
+            background-color: rgba(59, 130, 246, 0.05);
+            border-left: 1px solid lightgrey;
+        }
+
+        nav {
+            display: flex;
+            background-color: white;
+            border-bottom: 1px solid lightgray;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 30px 20px 20px;
+            position: sticky;
+            top: 0px;
+        }
+
+        p,
+        h1 {
+            margin: 0px;
+        }
+
+        a {
+            text-decoration: none;
+            margin-left: 5px;
+            font-size: 20px;
+        }
+
+        .sn {
+            border-bottom: 1px solid lightgrey;
+            padding: 10px;
+            color: rgb(97, 97, 97);
+            font-size: 15px;
+            font-weight: bold;
+            background-color: rgba(241, 237, 237, 0.32);
+        }
+
+        .w {
+            background-color: white;
+            color: rgb(97, 97, 97);
+            font-size: 18px;
+            font-weight: bolder;
+        }
+
+        .b {
+            background-color: rgb(41, 98, 255);
+            color: white;
+            font-weight: bolder;
+            font-size: 18px;
+            padding: 10px;
+            height: 48px;
+        }
+
+        span {
+            color: white;
+            background-color: rgb(19, 158, 92);
+            border-radius: 3px;
+            padding: 5px;
+            margin-right: 6px;
+        }
+
+        .m {
+            margin-top: 7px;
+            width: 75%;
+            padding: 0px;
+            background-color: rgb(41, 98, 255);
+        }
+
+        .lo {
+            padding: 12px;
+            width: 80px;
+            margin-right: 10px;
+            border: 1px solid lightgray;
+            font-size: 18px;
+            font-weight: bolder;
+            color: rgb(97, 97, 97);
+        }
+
+        i {
+            margin: 0px 8px 0px 0px;
+            height: 10px;
+            color: rgb(97, 97, 97);
+        }
+
+        .own {
+            color: rgb(97, 97, 97);
+            font-size: 25px;
+        }
+
+        .fws {
+            font-weight: bold;
+            font-size: 13px;
+            color: rgb(41, 122, 254);
+        }
+
+        .fa-pencil {
+            color: white;
+        }
+
+        .bg {
+            font-size: 47px;
+            color: rgb(33, 33, 33);
+        }
+
+        .sec1 {
+            display: flex;
+            flex-direction: column;
+            margin-top: auto;
+            margin-bottom: 40px;
+            align-items: center;
+        }
+
+        .sec1 i {
+            font-size: 30px;
+        }
+
+        .sec1 img {
+            margin-left: 140px;
+        }
+
+        .sh1 {
+            color: rgb(33, 33, 33);
+        }
+
+        #img3 {
+            display: flex;
+            justify-content: space-around;
+            border-bottom: 1px solid lightgrey;
+            padding-bottom: 80px;
+        }
+
+        #h1 {
+            color: rgb(33, 33, 33);
+            text-align: left;
+            font-size: 40px;
+        }
+
+        #h1p {
+            font-size: 20px;
+            text-align: left;
+        }
+
+        .img1 {
+            border-radius: 10px;
+            width: 30%;
+            padding: 10px 0px 40px 30px;
+            text-align: left;
+        }
+
+        #h1c {
+            color: rgb(33, 33, 33);
+            font-size: 40px;
+        }
+
+        #h1sc {
+            color: rgb(33, 33, 33);
+            font-size: 25px;
+        }
+
+        .main {
+            padding-bottom: 80px;
+            border-bottom: 1px solid lightgrey;
+        }
+
+        .main #img3 {
+            border: none;
+            padding-bottom: 40px;
+        }
+
+        #wrap {
+            display: flex;
+            flex-wrap: wrap;
+            column-count: 3;
+            justify-content: center;
+        }
+
+        #wrap div {
+            width: 26%;
+            height: 300px;
+            padding: 10px;
+            text-align: center;
+            border: 1px solid lightgrey;
+            border-radius: 7px;
+        }
+
+        #wrap .bn {
+            border: none;
+        }
+
+        .ps {
+            color: rgb(97, 97, 97);
+            font-size: 1rem;
+        }
+
+        a:hover {
+            background-color: white;
+            box-shadow: 0px 0px 1px lightgrey;
+        }
+
+        button:hover {
+            box-shadow: 0px 0px 5px lightgrey;
+        }
+
+        #parentwrap {
+            border-bottom: 1px solid lightgrey;
+            padding-bottom: 80px;
+            margin-bottom: 0px;
+        }
+
+        #childwrap {
+            display: flex;
+            flex-wrap: wrap;
+            column-count: 2;
+            justify-content: center;
+        }
+
+        #wrbr {
+            width: 80px;
+            height: 80px;
+            border-radius: 100%;
+            background-image: url(/images/code8.jpg);
+            background-size: cover;
+            margin-top: 20px;
+        }
+
+        #childwrap div {
+            display: flex;
+            width: 45%;
+        }
+
+        #childwrap div section {
+            text-align: left;
+            margin-left: 10px;
+        }
+
+        #childwrap div section p {
+            color: rgb(117, 117, 117);
+            font-size: 18px;
+        }
+
+        h3 {
+            margin-bottom: 5px;
+            color: rgb(66, 66, 66);
+        }
+
+        h4 {
+            margin-top: 0px;
+            margin-bottom: 10px;
+            color: rgb(117, 117, 117);
+        }
+
+        .bmbw {
+            font-size: 20px;
+            font-weight: bolder;
+            border: 1px solid lightgrey;
+            background-color: white;
+            color: rgb(66, 66, 66);
+            padding: 10px;
+        }
+
+        #parentwrap1 {
+            margin-top: 0px;
+            padding: 50px 0px 30px 0px;
+            background-color: rgba(241, 237, 237, 0.3);
+            border-bottom: 1px solid lightgrey;
+        }
+
+        #childwrap1 {
+            display: flex;
+            flex-wrap: wrap;
+            column-count: 3;
+            justify-content: center;
+        }
+
+        .cardsec {
+            display: flex;
+        }
+
+        .card {
+            width: 27%;
+            border: 1px solid lightgrey;
+            border-radius: 5px;
+            background-color: white;
+            margin: 8px;
+            padding: 5px 10px;
+            text-align: left;
+        }
+
+        .card p {
+            color: rgb(95, 95, 95);
+        }
+
+        .bodr {
+            width: 40px;
+            height: 40px;
+            border-radius: 100%;
+            background-image: url(/images/code8.jpg);
+            background-size: contain;
+            margin-top: 20px;
+        }
+
+        .cardsec h4 {
+            color: rgb(112, 112, 112);
+            margin: 15px 0px 0px 5px;
+        }
+
+        .cardsec small {
+            margin-left: 5px;
+            color: rgb(117, 117, 117);
+            font-size: 14px;
+        }
+
+        .fkyh {
+            padding: 30px 0px 80px 0px;
+            text-align: center;
+            border-bottom: 1px solid lightgrey;
+        }
+
+        .fkyh h2 {
+            font-size: 32px;
+            color: rgb(33, 33, 33);
+            margin-bottom: 5px;
+        }
+
+        .fkyh p {
+            font-size: 25px;
+            color: rgb(117, 117, 117);
+            margin-bottom: 50px;
+        }
+
+        .last {
+            display: flex;
+            justify-content: space-between;
+            padding: 0px 40px;
+        }
+
+        .ltsc {
+            text-align: left;
+
+        }
+
+        .ltsc h1 {
+            margin-top: 80px;
+            color: rgb(33, 33, 33);
+            font-size: 35px;
+        }
+
+        .ltsc p {
+            font-size: 18px;
+            color: rgb(117, 117, 117);
+        }
+
+        .last img {
+            margin-top: -42px;
+        }
+
+        .last1 {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        li {
+            list-style-type: none;
+            color: rgb(117, 117, 117);
+            text-align: left;
+        }
+
+        .li {
+            font-weight: bolder;
+        }
+
+        .last1sec {
+            margin-right: 20px;
+        }
+
+        .bton {
+            border-radius: 10px;
+            background-color: rgb(41, 98, 255);
+            color: white;
+            padding: 10px;
+            font-size: 20px;
+            font-weight: bolder;
+        }
+
+        .bton1 {
+            border: 1px solid lightgrey;
+            border-radius: 10px;
+            font-size: 20px;
+            padding: 10px;
+            color: rgb(117, 117, 117);
+            font-weight: bolder;
+        }
+
+        .icons {
+            text-align: left;
+            margin-left: 40px;
+        }
+
+        em {
+            color: rgb(117, 117, 117);
+        }
+
+        table,
+        td {
+            border: 2px solid black;
+            border-collapse: collapse;
+        }
+
+        td {
+            padding: 20px;
+        }
+
+        .y {
+            background-color: yellow;
+        }
+
+        .r {
+            background-color: red;
+        }
+
+        .b {
+            background-color: black;
+        }
+    </style>
+</head>
+
+<body>
+
+    <main class="d1">
+        <section>
+            <h1 class="sh1"><img src="/images/hn6.png" width="28px"> hashnode</h1><br>
+            <button class="b m" style="background-color:rgb(41,98,255);"><i class="fa fa-pencil"></i>
+                WRITE</button><br><br>
+            <a href="#"><i class="fa fa-reorder"></i>My Feed</a><br><br>
+            <a href="#"><i class="fa fa-compass"></i>Explore</a><br><br>
+            <a href="#"><i class="fa fa-tag"></i>Tags</a><br><br>
+            <a href="#"><i class="fa fa-bookmark-o"></i> Bookmarks</a><br><br>
+            <a href="#"><i class="fa fa-search"></i> Search</a><br><br>
+            <a href="#"><i class="fa fa-angle-down"></i> More</a>
+        </section>
+        <section class="sec1">
+            <i class="fa fa-sun-o"></i><br><br>
+            <i class="fa fa-bell-o"></i>
+            <img src="/images/pronodeb.PNG">
+        </section>
+    </main>
+
+
+
+    <main class="d2">
+        <nav>
+            <p class="w">Blogging as a developer, done right!</p>
+            <div>
+                <button class="lo">Login</button>
+                <button class="b">Create an account</button>
+            </div>
+        </nav>
+
+
+
+        <p class="sn"><span>NEW</span> Announcing Hashnode's $2.1M seed round<a href="#" class="fws"> Read full
+                announcement ></a></p><br><br><br><br>
+
+        <h1 class="bg">Everything you need to start blogging as a <br> developer!</h1><br><br>
+        <p class="own">Own your content, share ideas, and <br>connect with the global dev community!</p><br><br>
+        <button class="b">Start your personal blog for FREE</button><br><br><br><br>
+
+
+
+        <div id="img3">
+            <div>
+                <img src="/images/hn.PNG">
+                <p id="h1p">Start a developer blog</p>
+            </div>
+            <div>
+                <img src="/images/hn1.PNG">
+                <p id="h1p">Map your custom domain</p>
+            </div>
+            <div>
+                <img src="/images/hn2.PNG">
+                <p id="h1p">Connect with community</p>
+            </div>
+        </div><br><br><br>
+
+
+
+        <div id="img3">
+            <div>
+                <h1 id="h1">What? 👀</h1><br>
+                <p id="h1p">Hashnode is a free developer <br> blogging platform that allows you <br> to publish articles
+                    of your own <br> domain and helps you stay <br>connected with a global developer <br> community.</p>
+            </div>
+            <div>
+                <h1 id="h1">Why? 😍</h1><br>
+                <p id="h1p">
+                    This gives you a huge advantage: <br> Google and other search engines <br> send traffic directly to
+                    your domain, <br> and Hashnode community <br> members discover your articles on <br> their feed.
+                </p>
+            </div>
+
+            <img src="/images/hn3.PNG">
+        </div><br><br><br>
+
+
+
+        <div class="main">
+            <h1 id="h1c">Content Ownership.<br> No Ads. No Paywall. No kidding.</h1><br>
+            <div id="img3">
+                <div class="img1">
+                    <img src="/images/hn4.PNG"><br>
+                    <h1 id="h1sc">Blog on your personal <br> domain</h1>
+                    <p class="ps">Map your custom domain in just <br> seconds via our free CNAME pointing <br> feature.
+                        Serve your blog over HTTPS<br> with no extra configuration.<br>Get a high performance, secure,
+                        and <br> fully-optimized blog that delights<br> your readers.</p>
+                </div>
+                <div class="img1" style="border:1px solid lightgrey;margin-top:-12px;">
+                    <img src="/images/hn5.PNG"><br>
+                    <h1 id="h1sc">Instantly find your <br> audience</h1>
+                    <p class="ps">Map your custom domain in just <br> seconds via our free CNAME pointing <br> feature.
+                        Serve your blog over HTTPS<br> with no extra configuration.<br>Get a high performance, secure,
+                        and <br> fully-optimized blog that delights<br> your readers.</p>
+                </div>
+                <div class="img1">
+                    <img src="/images/hn7.PNG"><br>
+                    <h1 id="h1sc">No annoying pop-ups/ads</h1>
+                    <p class="ps">Knowledge sharing on Hashnode is <br> and will always be completely free. <br> Because
+                        we value the relationship <br> between you and your readers, we <br> won’t show ads or pop-ups
+                        on your <br> articles.</p>
+                </div>
+            </div>
+            <button class="b">Get Started ></button>
+        </div><br><br>
+
+
+
+        <div class="main">
+            <h1 id="h1c">Features that will make your blogging 10x better</h1><br><br>
+            <div id="wrap">
+                <div>
+                    <img src="/images/hn8.PNG">
+                    <h1 id="h1sc">Automatic Github <br> Backup</h1>
+                    <p class="ps">Every time you publish an article on <br> your blog, a markdown version of <br> the
+                        post is pushed to your private <br> GitHub repo as a backup.</p>
+                </div>
+                <div class="bn">
+                    <img src="/images/hn9.PNG">
+                    <h1 id="h1sc" style="margin-top: 20px;">Write in Markdown</h1>
+                    <p class="ps">Write your content in a distraction- <br> free Markdown editor with proper <br> syntax
+                        highlighting and see live <br> previews instantly. Embed images, <br> code snippets, tweets, and
+                        much <br> more.</p>
+                </div>
+                <div>
+                    <img src="/images/hn10.PNG">
+                    <h1 id="h1sc">AMP Support</h1>
+                    <p class="ps">Enable Accelerated Mobile Pages <br> (AMP) support for your blog with a <br> single
+                        click.</p>
+                </div>
+                <div class="bn">
+                    <img src="/images/hn11.PNG">
+                    <h1 id="h1sc">Edge Caching with SSL</h1>
+                    <p class="ps">We automatically cache your blog <br> using our homegrown CDN and <br> serve it over
+                        HTTPS. This results in <br> low time to first byte (TTFB) and <br> allows your blog to be
+                        extremely <br> responsive and fast.</p>
+                </div>
+                <div>
+                    <img src="/images/hn12.PNG">
+                    <h1 id="h1sc" style="margin-top:15px;">Own your Data</h1>
+                    <p class="ps">You retain all the rights to your <br> content. Export and download all <br> your
+                        posts from your dashboard <br> with a single click.</p>
+                </div>
+                <div class="bn">
+                    <img src="/images/hn13.PNG">
+                    <h1 id="h1sc" style="margin-top:5px;">HTTPS by default</h1>
+                    <p class="ps">It doesn't matter if you are using our <br> free subdomain or a custom one. <br> We
+                        provide SSL certificates for free <br> for all the blogs.</p>
+                </div>
+                <div>
+                    <img src="/images/hn14.PNG">
+                    <h1 id="h1sc">Add your personality</h1>
+                    <p class="ps">Showcase your personality and give <br> your blog a unique look to capture <br> your
+                        audience’s attention. You can <br> create a personalized theme from <br> an infinite range of
+                        HEX colors, <br> change your logo, and ​​customize <br> your blog even more if you want.</p>
+                </div>
+                <div class="bn">
+                    <img src="/images/hn15.PNG">
+                    <h1 id="h1sc" style="margin-top: 29px;">Free in-built newsletter <br> service</h1>
+                    <p class="ps">Enable a newsletter service with the <br> click of a button and let your <br> readers
+                        easily and quickly subscribe <br> to your blog.</p>
+                </div>
+                <div>
+                    <img src="/images/hn16.PNG">
+                    <h1 id="h1sc">Exclusive access to our <br>discord server</h1>
+                    <p class="ps">Get exclusive access to a network <br> of developers sharing knowledge on <br> the
+                        internet. Share your drafts, get <br> help, and receive feedback in real- <br> time.</p>
+                </div>
+            </div><br><br>
+            <button class="b">Get Started ></button>
+        </div><br><br><br>
+
+
+        <div id="parentwrap">
+            <h1 id="h1c">Trending Bloggers This Week</h1><br><br>
+            <div id="childwrap">
+                <div>
+                    <p id="wrbr"></p>
+                    <section>
+                        <h3>Tapas Adhikary</h3>
+                        <h4>blog.greenroots.info</h4>
+                        <p>Knowledge Shared === Knowledge Gained <br> UI/UX/ML | Blogger | Speaker | Mentor Connect <br>
+                            with me on Twitter(@tapasadhikary)</p>
+                    </section>
+                </div>
+                <div>
+                    <p id="wrbr"></p>
+                    <section>
+                        <h3>Oliver Jumpertz</h3>
+                        <h4>blog.oliverjumoertz.dev</h4>
+                        <p>I simply love software engineering. ❤️ And <br> what I really love is JavaScript /
+                            TypeScript, <br> Rust, and the web! Come and explore the <br> wonderful ...</p>
+                    </section>
+                </div>
+                <div>
+                    <p id="wrbr"></p>
+                    <section>
+                        <h3>Darmen Shah</h3>
+                        <h4>blog.shhdharmen.me</h4>
+                        <p>Hey, I am Dharmen Shah. I write about Angular, <br> JavaScript, CSS and Web Development. Do
+                            <br> checkout my blog to know more!
+                        </p>
+                    </section>
+                </div>
+                <div>
+                    <p id="wrbr"></p>
+                    <section>
+                        <h3>Victoria Lo</h3>
+                        <h4>lo-victoria.com</h4>
+                        <p>I'm a web/software developer who loves to <br> build projects and share valuable tips for new
+                            <br> programmers on this blog. Feel free to reach <br> me ...
+                        </p>
+                    </section>
+                </div>
+                <div>
+                    <p id="wrbr"></p>
+                    <section>
+                        <h3>Sam Walpole</h3>
+                        <h4>samwalpole.com</h4>
+                        <p>👨‍💻 Fullstack .NET and JavaScript web <br> developer 👨‍🏫 Coding teacher and advocate
+                            👨‍🔬 <br> Former PhD research scientist.</p>
+                    </section>
+                </div>
+                <div>
+                    <p id="wrbr"></p>
+                    <section>
+                        <h3>Sonu Jung</h3>
+                        <h4>sonujung.com</h4>
+                        <p>메이커,프로덕트 디자이너 정선우 입니다.저는 현재 식스샵<br>의 CPO로 일하며 온라인 브랜드 창업자들의 성장을 돕고 있<br>습니다.평소 일하며 배우고 느끼는 것을
+                            공유합니다.</p>
+                    </section>
+                </div>
+                <div>
+                    <p id="wrbr"></p>
+                    <section>
+                        <h3>Simona Winnekes </h3>
+                        <h4>winnekes.hashnode.dev</h4>
+                        <p>I talk about Node.js, TypeScript, IoT, web development, <br> robots — but also about
+                            switching careers to coding, <br> how to survive the journey ...</p>
+                    </section>
+                </div>
+                <div>
+                    <p id="wrbr"></p>
+                    <section>
+                        <h3>Savio Martin</h3>
+                        <h4>savio.xyz</h4>
+                        <p>Knowledge is best when shared 🤟</p>
+                    </section>
+                </div>
+                <div>
+                    <p id="wrbr"></p>
+                    <section>
+                        <h3>Miguel Brito</h3>
+                        <h4>miguendes.me</h4>
+                        <p>Machine Learning Engineer - Technical Writer-ish - <br> Interested in Software Testing, Best
+                            Practices, <br> Scalability, and Python.</p>
+                    </section>
+                </div>
+                <div>
+                    <p id="wrbr"></p>
+                    <section>
+                        <h3>Alberto Bonacina</h3>
+                        <h4>blog.albertobonacina.com</h4>
+                        <p>I love programming and I work as a Software Engineer on <br> Web and Mobile Apps. I'm
+                            expanding my knowledge on <br> Flutter and Dart I post content ...</p>
+                    </section>
+                </div>
+            </div><br><br><br>
+            <button class="bmbw">Browse more blogs ></button>
+        </div>
+
+
+        <div id="parentwrap1">
+            <h1 id="h1c" style="line-height:40px;">Don't just take our word for it,<br>trust the comunity!</h1><br><br>
+            <div id="childwrap1">
+                <div class="card">
+                    <section class="cardsec">
+                        <p class="bodr"></p>
+                        <section class="secflex">
+                            <h4>Quincy Larson</h4>
+                            <small>Founder, freeCodeCamp</small>
+                        </section>
+                    </section>
+                    <p>You can start a blog in just a few <br>seconds using @hashnode and <br>then you can move that to
+                        your <br>own
+                        domain if you get one later. <br>They will even help distribute <br>your articles on their
+                        platform. <br> By far
+                        the best place to create a <br> blog in 2020, imho.</p>
+                </div>
+                <div class="card">
+                    <section class="cardsec">
+                        <p class="bodr"></p>
+                        <section class="secflex">
+                            <h4>Danny Steenman</h4>
+                            <small>AWS Cloud Consultant</small>
+                        </section>
+                    </section>
+                    <p>I’ve decided to make a huge leap <br> and migrate my blog to <br> @hashnode ! I’m really <br>
+                        impressed with what they’ve <br> accomplished in this short <br> amount of time! 🎉🎉🎉
+                        <br><br>I’m happy to join this community <br> and I can’t wait to share more of <br> my
+                        learnings on AWS with you!
+                    </p>
+                </div>
+                <div class="card">
+                    <section class="cardsec">
+                        <p class="bodr"></p>
+                        <section class="secflex">
+                            <h4>Victoria Lo</h4>
+                            <small>Web/Software Developer & Writer</small>
+                        </section>
+                    </section>
+                    <p>100 days ago, I published my <br> first blog post on a new and<br> unfamiliar platform called
+                        <br> Hashnode. Today, publishing <br> articles on Hashnode is a <br> routine, a hobby, a great
+                        joy.
+                    </p>
+                </div>
+                <div class="card">
+                    <section class="cardsec">
+                        <p class="bodr"></p>
+                        <section class="secflex">
+                            <h4>James Tucker</h4>
+                            <small>Software engineer, soonastudios</small>
+                        </section>
+                    </section>
+                    <p>Moved my blog over to <br> @hashnode today. Why? <br>✅ It's free ✅ You own your <br> content ✅
+                        You have an existing <br> community to share your content <br> with ✅ The founders seem to <br>
+                        be
+                        eager to help you succeed <br> as a creator.</p>
+                </div>
+                <div class="card">
+                    <section class="cardsec">
+                        <p class="bodr"></p>
+                        <section class="secflex">
+                            <h4>Catalin Pit</h4>
+                            <small>AWS Community Builder and Writer</small>
+                        </section>
+                    </section>
+                    <p>The thing that attracts me the <br> most to Hashnode is that it <br> combines both worlds of a
+                        <br> dynamic blog like a WordPress <br> blog and a static site like a <br> Gatsby
+                        blog.<br><br>It has more features than a static <br> blog, but it is less-bloated than a <br>
+                        WordPress blog.
+                    </p>
+                </div>
+                <div class="card">
+                    <section class="cardsec">
+                        <p class="bodr"></p>
+                        <section class="secflex">
+                            <h4>Uduak Obong-Eren</h4>
+                            <small>Software Engineer, & Open Source Enthusiast</small>
+                        </section>
+                    </section>
+                    <p>I am super stoked to share that <br> my #tech blog on @hashnode <br> has crossed ✨58000+✨ page
+                        <br> views in less than 48 hours. <br><br>Great content + an amazing <br> platform = Winning
+                        combo! <br> Thanks to the team at Hashnode <br> 🙌 for building such a great <br>platform.
+                    </p>
+                </div>
+            </div><br><br><br>
+            <button class="bmbw">See All Testimonials ></button>
+        </div>
+
+
+        <div class="fkyh">
+            <h2>Start blogging with Hashnode, it's Free!</h2>
+            <p>Don't miss out.</p>
+            <button class="b">Start your personal blog for free ></button>
+        </div>
+
+
+        <div class="last">
+            <section class="ltsc">
+                <h1><img src="/images/hn6.png" width="32px">hashnode</h1>
+                <p>A blogging platform built for developers by developers. Blog on <br> personal domain, share ideas,
+                    and connect with the global dev <br> community!</p>
+            </section>
+            <img src="/images/hn17.PNG">
+        </div><br><br>
+
+
+        <div class="last1">
+            <ul>
+                <li class="li">Explore</li>
+                <li>Feed</li>
+                <li>Trending Blogs</li>
+                <li>Tags</li>
+                <li>Search</li>
+                <li>Bookmarks</li>
+                <li>Hashnode APIs</li>
+            </ul>
+            <ul>
+                <li class="li">Company</li>
+                <li>About Hashnode</li>
+                <li>Careers</li>
+                <li>Official Blog</li>
+                <li>Logos and Media</li>
+                <li>Changelog</li>
+            </ul>
+            <ul>
+                <li class="li">Comparisons</li>
+                <li>Hashnode vs Medium</li>
+                <li>Hashnode vs Ghost</li>
+                <li>Hashnode vs <br> Wordpress</li>
+                <li>Hashnode vs Dev.to</li>
+            </ul>
+            <ul>
+                <li class="li">Support</li>
+                <li>Support Docs</li>
+                <li>Contact</li>
+                <li>Join Discord</li>
+                <li>Feature Requests</li>
+            </ul>
+            <section class="last1sec">
+                <button class="bton">Start A Blog</button>
+                <button class="bton1">Sign In</button><br>
+                <em>Join the community of <br> over a million active <br> developers.</em>
+            </section>
+        </div><br><br>
+
+        <div class="icons">
+            <i class="fa fa-twitter"></i>
+            <i class="fa fa-linkedin-square"></i>
+            <i class="fa fa-instagram"></i>
+            <i class="fa fa-github"></i>
+            <i class="fa fa-facebook-square"></i>
+            <i class="fa fa-youtube-play"></i>
+        </div>
+    </main>
+
+
+
+    <main class="d3">
+    </main>
+</body>
+
+</html>
